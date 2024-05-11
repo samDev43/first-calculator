@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../tutorialCalculator/imdes.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form>
+                <div class="display">
+                    <input id="inpuTExt" type="text">
+                </div>
+                <div>
+                    <input type="button" value="AC" onclick="handleClear()">
+                    <input type="button" value="DE" onclick="sliceText()">
+                    <input type="button" value="." onclick="cal('.')">
+                    <input type="button" value="/" onclick="cal('/')">
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="cal(7)">
+                    <input type="button" value="8" onclick="cal(8)">
+                    <input type="button" value="9" onclick="cal(9)">
+                    <input type="button" value="*" onclick="cal('*')">
+                </div>
+                <div id="thirdrole">
+                    <input type="button" value="4" onclick="cal(4)">
+                    <input type="button" value="5" onclick="cal(5)">
+                    <input type="button" value="6" onclick="cal(6)">
+                    <input type="button" value="-" onclick="cal('-')">
+                </div>
+                <div>
+                    <input type="button" value="00" onclick="cal('samad')">
+                    <input type="button" value="0" onclick="cal('0')">
+                    <input type="button" value="=" onclick="calculate()">
+                    <input type="button" value="+" onclick="cal('+')">
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script>
+        let AllClear = document.getElementById('AC');   
+
+        function cal(it) {
+            let display = document.querySelector('.display input');
+            display.value += it;
+            // AC.value = '';
+
+            // console.log(display)
+        }
+        function handleClear() {
+            // console.log('heee');
+
+            inpuTExt.value = ''
+        }
+        function sliceText() {
+            let display = document.getElementById('inpuTExt');
+            display.value = inpuTExt.value.slice(0,-1);
+        }
+        function calculate(){
+              let display = document.getElementById('inpuTExt');
+              result = eval(display.value);
+              display.value = eval(display.value);
+        }
+        
+    </script>
+</body>
+
+</html>

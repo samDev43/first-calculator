@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>secondCalculator</title>
+    <link rel="stylesheet" href="../tutorialCalculator/imdes.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form>
+                <div class="display">
+                    <input id="screen" type="text">
+                </div>
+                <div>
+                    <input type="button" value="AC" onclick="clearAll('AC')">
+                    <input type="button" value="DE" onclick="slice('DC')">
+                    <input type="button" value="."  onclick="show('.')">
+                    <input type="button" value="/"  onclick="show('/')">
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="show('9')">
+                    <input type="button" value="8" onclick="show(8)">
+                    <input type="button" value="9" onclick="show(9)">
+                    <input type="button" value="*" onclick="show('*')">
+                </div>
+                <div id="thirdrole">
+                    <input type="button" value="4" onclick="show(4)">
+                    <input type="button" value="5" onclick="show(5)">
+                    <input type="button" value="6" onclick="show(6)">
+                    <input type="button" value="-" onclick="show('-')">
+                </div>
+                <div>
+                    <input type="button" value="**" onclick="show('**')">
+                    <input type="button" value="0" onclick="show(0)">
+                    <input type="button" value="=" onclick="calculate()">
+                    <input type="button" value="+" onclick="show('+')">
+                </div>
+    
+            </form>
+        </div>
+    </div>
+    <!-- <script>
+     let display = document.getElementById('screen');
+
+     function show(numb){
+        display.value += numb
+     }
+     function clearAll(){
+         display.value = '';
+     }
+     function eval() {
+            display.value = eval(display.value);
+        }
+     function slice(){
+        display.value = display.value.slice(0, -1);
+     }
+
+    </script> -->
+    <script>
+        let display = document.getElementById('screen');
+
+            function show(numb) {
+                display.value += numb;
+            }
+
+            function clearAll() {
+                display.value = '';
+            }
+
+            function calculate() {
+                display.value = eval(display.value);
+            }
+
+            function slice() {
+                display.value = display.value.slice(0, -1);
+            }
+    </script>
+        
+    </body>
